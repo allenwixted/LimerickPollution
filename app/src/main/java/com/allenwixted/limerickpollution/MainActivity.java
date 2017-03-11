@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView text;
     int recipient = 0;
-    String airQuality = "";
+    String airQuality = "Dear Sir/Mam, today's air quality level is '3, Good'. Let's see what it is when we start burning rubber.";
     Button send;
+    String manifesto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void sendSMSMessage() {
         Log.e("SMS", "HERE");
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(numbers[recipient], null, people[recipient], null, null);
+        smsManager.sendTextMessage(numbers[recipient], null, manifesto, null, null);
         int counter = recipient + 1;
         Toast.makeText(getApplicationContext(), "SMS sent to " + counter + " officials.",
                 Toast.LENGTH_LONG).show();
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                         airQuality = jsonPart.getString("aqih");
 
                         if(airRegion.equals("Rural_West")){
-                            String manifesto = "Dear Sir/Mam, today's air quality level is '" +  airQuality + "'. Let's see what it is when we start burning rubber.";
+                            manifesto = "Dear Sir/Mam, today's air quality level is '" +  airQuality + "'. Let's see what it is when we start burning rubber.";
                             text.setText(manifesto);
                         }
                     }
