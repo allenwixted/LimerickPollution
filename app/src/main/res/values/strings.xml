@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Fire SMS</string>
+    <string name="send_sms_to_all_councillors">Send SMS to All Councillors</string>
+    <string name="warning_sms_may_cost_you_credit">Warning: SMS may cost you credit</string>
+    <string name="manifesto">Message to be sent:</string>
+</resources>
